@@ -1,0 +1,1 @@
+/home/jestrella/Descargas/arduino-1.8.5-linux64/arduino-1.8.5/hardware/arduino/avr/libraries/MyCommon/MyCommon.h
