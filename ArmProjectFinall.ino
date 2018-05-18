@@ -34,6 +34,7 @@ void loop()
         // Vertical positions: 2, 6, 10
         // Gripper positions: 3, 7, 11
         
+        // Hardcoded for now
         int servoPos = 30;
 
         servoMoveStepFrom(armServo[i], armServo[i].read(), servoPos, servoMoveDelay);
