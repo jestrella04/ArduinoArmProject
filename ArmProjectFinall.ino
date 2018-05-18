@@ -19,11 +19,11 @@ void setup()
         armServo[i].attach(i);
     }
 
-	// Move Servos to the initial positions
+    // Move Servos to the initial positions
     setInitialPosition();
     
     // Delay before starting the loop
-    delay(armRealDelayInit);
+    delay(armDelayInit);
 }
 
 void loop()
@@ -44,7 +44,7 @@ void loop()
     setInitialPosition();
     
     // Delay before entering the loop again
-    delay(armRealDelayExit);
+    delay(armDelayExit);
 }
 
 void setInitialPosition()
