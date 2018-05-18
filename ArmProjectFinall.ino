@@ -30,14 +30,15 @@ void loop()
 {
     for (int i = 0; i <= servoCount; i++) {
         // Base positions: 0, 4, 8
-        // Horizontal positions: 1, 5, 9
-        // Vertical positions: 2, 6, 10
+        // Horizontal drive positions: 1, 5, 9
+        // Vertical drive positions: 2, 6, 10
         // Gripper positions: 3, 7, 11
         
         // Hardcoded for now
         int servoPos = 30;
 
-        servoMoveStepFrom(armServo[i], armServo[i].read(), servoPos, servoMoveDelay);
+        // Move the servo
+        armServoMove(armServo[i], servoPos);
     }
 
     // Move servos back to initial position
@@ -51,13 +52,11 @@ void setInitialPosition()
 {
     // Move servos to initial position
     for (int i = 0; i <= servoCount; i++) {
-        servoMoveStepFrom(armServo[i], armServo[i].read(), servoInitialPositionMatrix[i], servoMoveDelay);
+        armServoMove(armServo[i], servoInitialPositionMatrix[i]);
     }
 }
 
-void armServoMove(int degree)
+void armServoMove(Servo myServo, int degree)
 {
-    for (int i = 0; i <= servoCount; i++) {
-        servoMoveStepFrom(armServo[i], armServo[i].read(), degree, servoMoveDelay);
-    }
+    servoMoveStepFrom(myServo, myServo.read(), degree, servoMoveDelay);
 }
